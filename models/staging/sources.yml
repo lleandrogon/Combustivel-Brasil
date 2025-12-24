@@ -1,0 +1,176 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Dados brutos de combustíveis no Brasil"
+    schema: analytics_raw
+    loader: postgres
+
+    tables:
+      - name: combustiveis_brasil
+        description: "Tabela com informações da gasolina e produtos semelhantes no Brasil inteiro"
+        columns:
+          - name: referencia
+            description: Ano + Mês de referência
+            tests:
+              - not_null
+          - name: ano
+            description: Ano de referência dos dados
+          - name: mes
+            description: Mês de referência dos dados
+          - name: gasolina_comum_preco_revenda_avg
+            description: Média de preço da gasolina comum naquele período
+          - name: gasolina_comum_preco_revenda_min
+            description: Preço mínimo da gasolina comum naquele período
+          - name: gasolina_comum_preco_revenda_max
+            description: Preço máximo da gasolina comum naquele período
+          - name: gasolina_aditivada_preco_revenda_avg
+            description: Média de preço da gasolina aditivada naquele período
+          - name: gasolina_aditivada_preco_revenda_min
+            description: Preço mínimo da gasolina aditivada naquele período
+          - name: gasolina_aditivada_preco_revenda_max
+            description: Preço máximo da gasolina aditivada naquele período
+          - name: etanol_hidratado_preco_revenda_avg
+            description: Média de preço do etanol hidratado naquele período
+          - name: etanol_hidratado_preco_revenda_min
+            description: Preço mínimo do etanol hidratado naquele período
+          - name: etanol_hidratado_preco_revenda_max
+            description: Preço máximo do etanol hidratado naquele período
+          - name: oleo_diesel_preco_revenda_avg
+            description: Média de preço do óleo diesel naquele período
+          - name: oleo_diesel_preco_revenda_min
+            description: Preço mínimo do óleo diesel naquele período
+          - name: oleo_diesel_preco_revenda_max
+            description: Preço máximo do óleo diesel naquele período
+          - name: oleo_diesel_s10_preco_revenda_avg
+            description: Média de preço do óleo diesel s10 naquele período
+          - name: oleo_diesel_s10_preco_revenda_min
+            description: Preço mínimo do óleo diesel s10 naquele período
+          - name: oleo_diesel_s10_preco_revenda_max
+            description: Preço máximo do óleo diesel s10 naquele período
+          - name: gas_cozinha_glp_preco_revenda_avg
+            description: Média de preço do gás de cozinha glp naquele período
+          - name: gas_cozinha_glp_preco_revenda_min
+            description: Preço mínimo do gás de cozinha glp naquele período
+          - name: gas_cozinha_glp_preco_revenda_max
+            description: Preço máximo do gás de cozinha glp naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_avg
+            description: Média de preço do gás de cozinha natural veicular (GNV) naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_min
+            description: Preço mínimo do gás de cozinha natural veicular (GNV) naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_max
+            description: Preço máximo do gás de cozinha natural veicular (GNV) naquele período
+
+      - name: combustiveis_estados
+        description: "Tabela com informações da gasolina e produtos semelhantes no Brasil dividido por estado"
+        columns:
+          - name: referencia
+            description: Ano + Mês de referência
+            tests:
+              - not_null
+          - name: ano
+            description: Ano de referência dos dados
+          - name: mes
+            description: Mês de referência dos dados
+          - name: regiao
+            description: Região geográfica
+          - name: estado
+            description: Estado brasileiro
+          - name: gasolina_comum_preco_revenda_avg
+            description: Média de preço da gasolina comum naquele período
+          - name: gasolina_comum_preco_revenda_min
+            description: Preço mínimo da gasolina comum naquele período
+          - name: gasolina_comum_preco_revenda_max
+            description: Preço máximo da gasolina comum naquele período
+          - name: gasolina_aditivada_preco_revenda_avg
+            description: Média de preço da gasolina aditivada naquele período
+          - name: gasolina_aditivada_preco_revenda_min
+            description: Preço mínimo da gasolina aditivada naquele período
+          - name: gasolina_aditivada_preco_revenda_max
+            description: Preço máximo da gasolina aditivada naquele período
+          - name: etanol_hidratado_preco_revenda_avg
+            description: Média de preço do etanol hidratado naquele período
+          - name: etanol_hidratado_preco_revenda_min
+            description: Preço mínimo do etanol hidratado naquele período
+          - name: etanol_hidratado_preco_revenda_max
+            description: Preço máximo do etanol hidratado naquele período
+          - name: oleo_diesel_preco_revenda_avg
+            description: Média de preço do óleo diesel naquele período
+          - name: oleo_diesel_preco_revenda_min
+            description: Preço mínimo do óleo diesel naquele período
+          - name: oleo_diesel_preco_revenda_max
+            description: Preço máximo do óleo diesel naquele período
+          - name: oleo_diesel_s10_preco_revenda_avg
+            description: Média de preço do óleo diesel s10 naquele período
+          - name: oleo_diesel_s10_preco_revenda_min
+            description: Preço mínimo do óleo diesel s10 naquele período
+          - name: oleo_diesel_s10_preco_revenda_max
+            description: Preço máximo do óleo diesel s10 naquele período
+          - name: gas_cozinha_glp_preco_revenda_avg
+            description: Média de preço do gás de cozinha glp naquele período
+          - name: gas_cozinha_glp_preco_revenda_min
+            description: Preço mínimo do gás de cozinha glp naquele período
+          - name: gas_cozinha_glp_preco_revenda_max
+            description: Preço máximo do gás de cozinha glp naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_avg
+            description: Média de preço do gás de cozinha natural veicular (GNV) naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_min
+            description: Preço mínimo do gás de cozinha natural veicular (GNV) naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_max
+            description: Preço máximo do gás de cozinha natural veicular (GNV) naquele período
+
+      - name: combustiveis_regioes
+        description: "Tabela com informações da gasolina e produtos semelhantes no Brasil dividido por região"
+        columns:
+          - name: referencia
+            description: Ano + Mês de referência
+            tests:
+              - not_null
+          - name: ano
+            description: Ano de referência dos dados
+          - name: mes
+            description: Mês de referência dos dados
+          - name: regiao
+            description: Região geográfica
+          - name: gasolina_comum_preco_revenda_avg
+            description: Média de preço da gasolina comum naquele período
+          - name: gasolina_comum_preco_revenda_min
+            description: Preço mínimo da gasolina comum naquele período
+          - name: gasolina_comum_preco_revenda_max
+            description: Preço máximo da gasolina comum naquele período
+          - name: gasolina_aditivada_preco_revenda_avg
+            description: Média de preço da gasolina aditivada naquele período
+          - name: gasolina_aditivada_preco_revenda_min
+            description: Preço mínimo da gasolina aditivada naquele período
+          - name: gasolina_aditivada_preco_revenda_max
+            description: Preço máximo da gasolina aditivada naquele período
+          - name: etanol_hidratado_preco_revenda_avg
+            description: Média de preço do etanol hidratado naquele período
+          - name: etanol_hidratado_preco_revenda_min
+            description: Preço mínimo do etanol hidratado naquele período
+          - name: etanol_hidratado_preco_revenda_max
+            description: Preço máximo do etanol hidratado naquele período
+          - name: oleo_diesel_preco_revenda_avg
+            description: Média de preço do óleo diesel naquele período
+          - name: oleo_diesel_preco_revenda_min
+            description: Preço mínimo do óleo diesel naquele período
+          - name: oleo_diesel_preco_revenda_max
+            description: Preço máximo do óleo diesel naquele período
+          - name: oleo_diesel_s10_preco_revenda_avg
+            description: Média de preço do óleo diesel s10 naquele período
+          - name: oleo_diesel_s10_preco_revenda_min
+            description: Preço mínimo do óleo diesel s10 naquele período
+          - name: oleo_diesel_s10_preco_revenda_max
+            description: Preço máximo do óleo diesel s10 naquele período
+          - name: gas_cozinha_glp_preco_revenda_avg
+            description: Média de preço do gás de cozinha glp naquele período
+          - name: gas_cozinha_glp_preco_revenda_min
+            description: Preço mínimo do gás de cozinha glp naquele período
+          - name: gas_cozinha_glp_preco_revenda_max
+            description: Preço máximo do gás de cozinha glp naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_avg
+            description: Média de preço do gás de cozinha natural veicular (GNV) naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_min
+            description: Preço mínimo do gás de cozinha natural veicular (GNV) naquele período
+          - name: gas_natural_veicular_gnv_preco_revenda_max
+            description: Preço máximo do gás de cozinha natural veicular (GNV) naquele período
