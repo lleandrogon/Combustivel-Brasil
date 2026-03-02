@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fct_preco_combustivel_brasil
+    description: Tabela de preço de combustíveis no Brasil com porcentagem de crescimento por Mês
+
+    columns:
+      - name: referencia
+        description: Ano e Mês do preço
+      - name: ano
+        description: Ano do preço
+      - name: mes
+        description: Mês do preço
+      - name: combustivel
+        description: Tipo de combustível
+      - name: preco_medio
+        description: Preço médio do combustível
+      - name: mom_pct
+        description: Porcentagem de crescimento de acordo com o mês anterior

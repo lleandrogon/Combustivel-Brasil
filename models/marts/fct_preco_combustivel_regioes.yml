@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_preco_combustivel_regioes
+    description: Tabela com preços médios de combustíveis por região no Brasil, incluindo variação percentual mês a mês
+
+    columns:
+      - name: referencia
+        description: Ano e Mês do preço
+      - name: ano
+        description: Ano do preço
+      - name: mes
+        description: Mês do preço
+      - name: regiao
+        description: Região geográfica do Brasil
+      - name: combustivel
+        description: Tipo de combustível
+      - name: preco_medio
+        description: Preço médio do combustível
+      - name: mom_pct
+        description: Porcentagem de crescimento de acordo com o mês anterior

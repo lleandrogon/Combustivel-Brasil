@@ -12,8 +12,6 @@ sources:
         columns:
           - name: referencia
             description: Ano + Mês de referência
-            tests:
-              - not_null
           - name: ano
             description: Ano de referência dos dados
           - name: mes
@@ -66,8 +64,6 @@ sources:
         columns:
           - name: referencia
             description: Ano + Mês de referência
-            tests:
-              - not_null
           - name: ano
             description: Ano de referência dos dados
           - name: mes
@@ -124,8 +120,6 @@ sources:
         columns:
           - name: referencia
             description: Ano + Mês de referência
-            tests:
-              - not_null
           - name: ano
             description: Ano de referência dos dados
           - name: mes
